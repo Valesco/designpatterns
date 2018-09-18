@@ -1,0 +1,34 @@
+﻿<Window x:Class="DesignPatternsProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesignPatternsProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="455" Width="655">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ComboBox Panel.ZIndex="99999" Grid.Row="0"  Name="ShapeSelector" MouseMove="mouseMove">
+            <ComboBoxItem IsSelected="True">Rectangle</ComboBoxItem>
+            <ComboBoxItem>Ellipse</ComboBoxItem>
+        </ComboBox>
+
+        <Button Panel.ZIndex="99999" Grid.Row="1" Visibility="Collapsed" Click="plus_mouseLeftDown" Name="ShapeResizePlus" Margin="-1,10,613,362" FontWeight="Bold" Content="+"></Button>
+        <Button Panel.ZIndex="99999" Grid.Row="1" Visibility="Collapsed" Click="minus_mouseLeftDown" Name="ShapeResizeMinus" Margin="-1,40,613,332" FontWeight="Bold" Content="-"></Button>
+
+        <Button Panel.ZIndex="99999" Grid.Row="1" Click="group_mouseLeftDown" Name="Group" Margin="514,75,10,297" FontWeight="Bold" Content="Create group"></Button>
+        <Button Panel.ZIndex="99999" Grid.Row="1" Click="disband_mouseLeftDown" Name="Disband" Margin="514,110,10,262" FontWeight="Bold" Content="Disband group"></Button>
+        <Button Panel.ZIndex="99999" Grid.Row="1" Click="import_mouseLeftDown" Name="Import" Margin="514,5,10,367" FontWeight="Bold" Content="Import"></Button>
+        <Button Panel.ZIndex="99999" Grid.Row="1" Click="export_mouseLeftDown" Name="Export" Margin="514,40,10,332" FontWeight="Bold" Content="Export"></Button>
+
+        <Button Panel.ZIndex="99999" Grid.Row="1" Click="undo_mouseLeftDown" Name="Undo" Margin="514,147,73,225" FontWeight="Bold" Content="Undo"></Button>
+        <Button Panel.ZIndex="99999" Grid.Row="1" Click="redo_mouseLeftDown" Name="Redo" Margin="579,147,10,225" FontWeight="Bold" Content="Redo"></Button>
+
+        <Canvas Grid.Row="1" Background="White" Name="MainCanvas" MouseLeftButtonDown="mouseLeftDown" MouseLeftButtonUp="mouseLeftUp" MouseMove="mouseMove" Margin="-1,0,1,0"></Canvas>
+
+    </Grid>
+</Window>
